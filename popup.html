@@ -5,45 +5,47 @@
  value "popup.html".
  -->
 <html>
-  <head>
-    <title>Getting Started Extension's Popup</title>
-    
-      <p class="title">Kill-Switch for Chrome</p>
-      <hr />
+  <head>    
     <body>
-      <p>Activate Kill Switch</p>
-      <p>Modify Whitelist</p>   
+      <p class="title">Kill-Switch for Chrome</p>
+      <p id="active_tag">Kill-Switch is NOT active</p>
+      <hr align="left" width="90%"></hr>
+      <button type="button" id="activate">Activate</button>
+      <p class="modify_whitelist">Modify Whitelist</p>  
+      <script src="program.js"></script>  
     </body>
 
     <style>   
+      html {  
+        height: 100px;
+        width: 220px;
+        padding-right: 10px;
+      }
       .title {
         font-family: Georgia, Times, "Times New Roman";
-        font-size: 18px;
+        font-size: 16px;
       }
-      body {
-          font-family: helvetica;
-          font-size: 12px;
+      .active_tag {
+        font-family: Georgia, Times, "Times New Roman";
+        font-size: 14px;
+        color: red;
+      }
+      p {
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        cursor: pointer;
+      }
+      .modify_whitelist:hover {
+        background-color: rgb(202, 202, 202);
+      }
+      body {   
+          background-image: url("images/background.png");
+          height: 100px;
+          width: 220px;
         }
-        #status {
-          /* avoid an excessively wide status text */
-          white-space: pre;
-          text-overflow: ellipsis;
-          overflow: hidden;
-          max-width: 400px;
-        }
-    </style>
-
-    <!--
-      - JavaScript and HTML must be in separate files: see our Content Security
-      - Policy documentation[1] for details and explanation.
-      -
-      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
-     -->
-    <script src="popup.js"></script>
+    </style>   
   </head>
-  <body>
-    <div id="status"></div>
-    <img id="image-result" hidden>
-  </body>
 </html>
 
