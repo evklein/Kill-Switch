@@ -19,9 +19,6 @@ p {
   padding-bottom: 5px;
   cursor: pointer;
 }
-#activate:hover {
-  background-color: rgba(202, 202, 202, 0.5);
-}
 .modify_whitelist:hover {
   background-color: rgba(202, 202, 202, 0.5);
 }

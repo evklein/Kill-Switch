@@ -12,35 +12,42 @@ function toggle() {
 		activeTag.innerHTML = "Kill-Switch is active";
 		activateButton.innerHTML = "Deactivate";
 		activeTag.style.color = "green";
+		removeUnproductiveTabs();
 	}
 	else {
 		activeTag.innerHTML = "Kill-Switch is NOT active";
 		activateButton.innerHTML = "Activate";
 		activeTag.style.color = "red";
 	}
-
-	getAllTabURLs();
 }
 
 activateButton.onclick = toggle;
 
-function getAllTabURLs() {
-	var urls = new Array();
-
+function removeUnproductiveTabs() {
+	var list = ["imgur.com", "youtube.com", "facebook.com", "reddit.com"];
 	chrome.tabs.query({}, function (allTabs) {
 		for (i = 0; i < allTabs.length; i++) {
-			urls.push(allTabs[i].url);
+			for (j = 0; j < list.length; j++) {
+				if (allTabs[i].url.indexOf(list[j]) != -1) {
+					chrome.tabs.remove(allTabs[i].id, function() {});
+				}
+			}
 		}
 	});
-
-	return urls;
 }
 
-// ERROR SOMEWHERE HERE!!!!!!!!!
 // function killUnproductiveTabs() {
 // 	var allUrls = getAllTabURLs();
-
-// 	for (int i = 0; i < allUrls.length - 1; i++) {
-// 		for (int i = 0; i < )
+// 	alert(allUrls[1]);
+// 	var reader = new FileReader();
+//
+// 	var blacklist = reader.readAsText("blacklist.json");
+// 	for (int i = 0; i < allUrls.length; i++) {
+// 		for (int j = 0; j < blacklist.blacklist.length, j++) {
+// 			if (allUrls[i].contains(blacklist.blacklist[j]))
+// 			{
+// 				chrome.tabs.remove(i, function());
+// 			}
+// 		}
 // 	}
 // }
