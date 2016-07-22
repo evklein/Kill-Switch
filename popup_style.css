@@ -1,0 +1,33 @@
+html {
+  width: 220px;
+  height: 100px;
+  padding-right: 10px;
+}
+.title {
+  font-family: Georgia, Times, "Times New Roman";
+  font-size: 16px;
+}
+.active_tag {
+  font-family: Georgia, Times, "Times New Roman";
+  font-size: 24px;
+  color: red;
+}
+p {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  cursor: pointer;
+}
+#activate:hover {
+  background-color: rgba(202, 202, 202, 0.5);
+}
+.modify_whitelist:hover {
+  background-color: rgba(202, 202, 202, 0.5);
+}
+body {
+  text-align: center;
+    background-image: url("images/background.png");
+    width: 220px;
+    height: 100px;
+  }
