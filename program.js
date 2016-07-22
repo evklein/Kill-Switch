@@ -4,18 +4,18 @@
 //     document.getElementById('do-count').innerHTML = a;
 // }
 // document.getElementById('do-count').onclick = count;
-
 var activeTag = document.getElementById("active_tag");
 var activateButton = document.getElementById("activate");
 
-function toggle()
-{
+function toggle() {
 	if (activeTag.innerHTML == "Kill-Switch is NOT active") {
 		activeTag.innerHTML = "Kill-Switch is active";
+		activateButton.innerHTML = "Deactivate";
 		activeTag.style.color = "green";
 	}
 	else {
 		activeTag.innerHTML = "Kill-Switch is NOT active";
+		activateButton.innerHTML = "Activate";
 		activeTag.style.color = "red";
 	}
 
@@ -28,7 +28,7 @@ function getAllTabURLs() {
 	var urls = new Array();
 
 	chrome.tabs.query({}, function (allTabs) {
-		for (i = 0; i < allTabs.length; i++)
+		for (i = 0; i < allTabs.length; i++) {
 			urls.push(allTabs[i].url);
 		}
 	});
