@@ -18,19 +18,18 @@ function toggle()
 		activeTag.innerHTML = "Kill-Switch is NOT active";
 		activeTag.style.color = "red";
 	}
+
+	getAllTabURLs();
 }
 
 activateButton.onclick = toggle;
 
 function getAllTabURLs() {
-	var urls = [];
-	index = 0;
+	var urls = new Array();
 
-	chrome.tabs.query({}, function (allTabs) 
-	{
+	chrome.tabs.query({}, function (allTabs) {
 		for (i = 0; i < allTabs.length; i++)
-		{
-			urls[i] = allTabs[i].url;
+			urls.push(allTabs[i].url);
 		}
 	});
 
