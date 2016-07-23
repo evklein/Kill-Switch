@@ -10,13 +10,11 @@ var activateButton = document.getElementById("activate");
 function toggle() {
 	if (activeTag.innerHTML == "Kill-Switch is NOT active") {
 		activeTag.innerHTML = "Kill-Switch is active";
-		activateButton.innerHTML = "Deactivate";
 		activeTag.style.color = "green";
 		removeUnproductiveTabs();
 	}
 	else {
 		activeTag.innerHTML = "Kill-Switch is NOT active";
-		activateButton.innerHTML = "Activate";
 		activeTag.style.color = "red";
 	}
 }

@@ -19,12 +19,16 @@ p {
   padding-bottom: 5px;
   cursor: pointer;
 }
+button {
+  padding: 24px 32px;
+  background-image: url("/images/button_background.png");
+}
 .modify_whitelist:hover {
   background-color: rgba(202, 202, 202, 0.5);
 }
 body {
   text-align: center;
-    background-image: url("/images/background.png");
+    /*background-image: url("/images/background.png");*/
     width: 220px;
     height: 100px;
   }
