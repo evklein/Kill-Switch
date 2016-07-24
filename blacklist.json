@@ -1,9 +1,5 @@
-{"blacklist":
-  [
-    {
-      "youtube.com",
-      "facebook.com",
-      "reddit.com"
-    }
-  ]
-}
+[
+  "youtube.com",
+  "facebook.com",
+  "twitter.com"
+]

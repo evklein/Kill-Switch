@@ -1,7 +1,20 @@
 var activateButton = document.getElementById("activate");
 
+function fetchUrlData()
+{
+	var list = new Array();
+	$.getJSON('blacklist.json', function(data) {
+		for (i = 0; i < data.length; i++) {
+			list.push(data[i]);
+		}
+	});
+
+	return list;
+}
+
 function removeUnproductiveTabs() {
-	var list = ["imgur.com", "youtube.com", "facebook.com", "reddit.com"];
+	var list = fetchUrlData();
+	console.log(list);
 	chrome.tabs.query({}, function (allTabs) {
 		for (i = 0; i < allTabs.length; i++) {
 			for (j = 0; j < list.length; j++) {
