@@ -1,34 +1,71 @@
+@font-face {
+    font-family: titleFont;
+    src: url('/Blacksword.otf');
+}
 html {
   width: 220px;
-  height: 100px;
-  padding-right: 10px;
+  height: 20px;
 }
 .title {
-  font-family: Georgia, Times, "Times New Roman";
-  font-size: 16px;
+  margin-top: 0;
+  font-family: 'titleFont';
+  color: white;
+  font-size: 36px;
+  padding-top: 5px;
 }
-.active_tag {
-  font-family: Georgia, Times, "Times New Roman";
-  font-size: 24px;
-  color: red;
-}
-p {
-  padding-left: 10px;
+.modify_whitelist {
+  font-family: Helvetica;
+  background-color: rgba(202, 202, 202, 0.5);
+  border-top: solid 1px rgb(215, 215, 215);
   padding-right: 10px;
   padding-top: 5px;
   padding-bottom: 5px;
   cursor: pointer;
 }
 button {
-  padding: 24px 32px;
-  background-image: url("/images/button_background.png");
+  border: 2px solid rgb(229, 38, 52);
+  border-radius: 10px;
+  padding: 36px 75px;
+  background: repeating-linear-gradient(
+    45deg,
+    #000000,
+    #000000 10px,
+    #E52634 10px,
+    #E52634 20px
+    )
 }
 .modify_whitelist:hover {
-  background-color: rgba(202, 202, 202, 0.5);
+  background-color: rgba(180, 180, 180, 0.5);
 }
 body {
+  margin: 0;
+  margin-top: 0;
+  padding: 0;
   text-align: center;
-    /*background-image: url("/images/background.png");*/
     width: 220px;
-    height: 100px;
+    height: 20px;
+    background: repeating-linear-gradient(
+      90deg,
+      rgb(245, 245, 245),
+      rgb(245, 245, 245) 4px,
+      rgb(215, 215, 215) 4px,
+      rgb(215, 215, 215) 5px
+      )
   }
+.title_bar {
+  background: repeating-linear-gradient(
+    90deg,
+    rgb(229, 38, 52),
+    rgb(229, 38, 52) 4px,
+    rgb(150, 10, 25) 4px,
+    rgb(150, 10, 25) 5px
+    );
+  /*outline: 1px solid rgb(150, 10, 25);*/
+  border-bottom: 1px solid rgb(150, 10, 25);
+  width: 220px;
+  height: 60px
+}
+.button_label {
+  font-size: 14px;
+  font-family: Helvetica;
+}
