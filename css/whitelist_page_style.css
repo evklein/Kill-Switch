@@ -1,0 +1,21 @@
+.title {
+  font-size: 36px;
+  padding-top: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.header {
+  vertical-align: middle;
+  margin: 0;
+}
+table, tr, th {
+  border: 1px solid black;
+  padding: 5px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+#web_entry {
+  margin: 0;
+  width: 270px;
+}

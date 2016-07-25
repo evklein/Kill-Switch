@@ -1,4 +1,5 @@
 var activateButton = document.getElementById("activate");
+var modifyWhitelistButton = document.getElementById("modify_whitelist");
 
 function fetchUrlData()
 {
@@ -27,3 +28,9 @@ function removeUnproductiveTabs() {
 }
 
 activateButton.onclick = removeUnproductiveTabs;
+
+function openBlacklistPage() {
+	chrome.tabs.create({'url': "whitelist_page.html"});
+}
+
+modifyWhitelistButton.onclick = openBlacklistPage;

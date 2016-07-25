@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head>
+    <body>
+      <p class="title">Productivity Blacklist</p>
+      <div class="entry">
+        <p>Enter <b>full</b> website URL (e.g. https://www.youtube.com/):</p>
+        <input type="text" name="enter_website" id="web_entry"></input>
+      </div>
+      <table>
+        <tr>
+          <th>Site Name</th>
+          <th>Remove</th>
+        </tr>
+        <tr>
+          <th>https://www.youtube.com/</th>
+          <th> <input type="checkbox" name="radio">
+        </tr>
+        <tr>
+          <th>https://www.facebook.com/</th>
+          <th> <input type="checkbox" name="radio">
+        </tr>
+        <tr>
+          <th>https://www.twitter.com/</th>
+          <th> <input type="checkbox" name="radio">
+        </tr>
+      </table>
+      <div id="site_list"></div>
+      <button>Update Blacklist</button>
+    </body>
+    <link rel="stylesheet" type="text/css" href="css/whitelist_page_style.css">
+  </head>
+</html>
