@@ -12,28 +12,30 @@ function generateRows() {
   });
 }
 
-window.onload = generateRows();
-
-function addSiteToBlacklist() {
+function updateBlacklist() {
+  // Check for user adding additional website (and add if not empty/duplicate)...
   var value = addSiteField.value.trim();
   chrome.storage.local.get('urls', function(data) {
     var list = data.urls;
-    if (value != 0) {
+    if (value.length != 0) {
       if (!checkForDuplicates(value, list)) {
         list.push(value);
       }
     }
 
+    // Check for user removing site already on blacklist.
     var checkboxes = document.querySelectorAll("input[type=checkbox]");
     for (i = 0; i < checkboxes.length; i++) {
       if (checkboxes[i].checked) {
         var name = checkboxes[i].name;
         var index = list.indexOf(name);
-        console.log(name + " | " + index);
         list.splice(index, 1);
       }
     }
+
+    // Save results and refresh page.
     chrome.storage.local.set({'urls':list});
+    window.location.reload();
   });
 }
 
@@ -46,26 +48,5 @@ function checkForDuplicates(testValue, urls) {
   return false;
 }
 
-function removeSiteFromBlacklist() {
-  chrome.storage.local.get('urls', function(data) {
-    var list = data.urls;
-    var checkboxes = document.querySelectorAll("input[type=checkbox]");
-    for (i = 0; i < checkboxes.length; i++) {
-      if (checkboxes[i].checked) {
-        for (j = 0; j < list.length; j++) {
-          if (list[j] === checkboxes[i].name) {
-            list.splice(j, 1);
-          }
-        }
-      }
-    }
-    chrome.storage.local.set({'urls':list});
-  });
-}
-
-function updateBlacklist() {
-  addSiteToBlacklist();
-  window.location.reload();
-}
-
+window.onload = generateRows();
 updateButton.onclick = updateBlacklist;
