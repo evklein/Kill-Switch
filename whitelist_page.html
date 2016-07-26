@@ -7,27 +7,16 @@
         <p>Enter <b>full</b> website URL (e.g. https://www.youtube.com/):</p>
         <input type="text" name="enter_website" id="web_entry"></input>
       </div>
-      <table>
+      <table id="site_list">
         <tr>
-          <th>Site Name</th>
+          <th>Site URL</th>
           <th>Remove</th>
         </tr>
-        <tr>
-          <th>https://www.youtube.com/</th>
-          <th> <input type="checkbox" name="radio">
-        </tr>
-        <tr>
-          <th>https://www.facebook.com/</th>
-          <th> <input type="checkbox" name="radio">
-        </tr>
-        <tr>
-          <th>https://www.twitter.com/</th>
-          <th> <input type="checkbox" name="radio">
-        </tr>
       </table>
-      <div id="site_list"></div>
-      <button>Update Blacklist</button>
+      <button id="update_blacklist">Update Blacklist</button>
     </body>
+    <script src="jquery-3.1.0.min.js"></script>
+    <script src="blacklist_page.js"></script>
     <link rel="stylesheet" type="text/css" href="css/whitelist_page_style.css">
   </head>
 </html>

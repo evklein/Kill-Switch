@@ -4,26 +4,24 @@ var modifyWhitelistButton = document.getElementById("modify_whitelist");
 function fetchUrlData()
 {
 	var list = new Array();
-	$.getJSON('blacklist.json', function(data) {
-		for (i = 0; i < data.length; i++) {
-			list.push(data[i]);
-		}
-	});
-
+	chrome.storage.local.get('urls', function(data) {list = data});
+	console.log()
 	return list;
 }
 
 function removeUnproductiveTabs() {
-	var list = fetchUrlData();
-	console.log(list);
+	var list = new Array();
 	chrome.tabs.query({}, function (allTabs) {
-		for (i = 0; i < allTabs.length; i++) {
-			for (j = 0; j < list.length; j++) {
-				if (allTabs[i].url.indexOf(list[j]) != -1) {
-					chrome.tabs.remove(allTabs[i].id, function(){});
+		chrome.storage.local.get('urls', function(data) {
+			list = data.urls;
+			for (i = 0; i < allTabs.length; i++) {
+				for (j = 0; j < list.length; j++) {
+					if (allTabs[i].url.indexOf(list[j]) != -1) {
+						chrome.tabs.remove(allTabs[i].id, function() {});
+					}
 				}
 			}
-		}
+		});
 	});
 }
 
