@@ -5,16 +5,12 @@
   margin-bottom: 0;
   padding-bottom: 0;
 }
-.header {
-  vertical-align: middle;
+#web_entry {
   margin: 0;
+  width: 270px;
 }
 table, tr, th {
   border: 1px solid black;
   margin-top: 10px;
   margin-bottom: 5px;
-}
-#web_entry {
-  margin: 0;
-  width: 270px;
 }
